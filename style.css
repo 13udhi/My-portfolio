@@ -570,6 +570,7 @@ body {
         /* Posisi contact START */
         .contact .content {
             width: 70vw;
+            font-size: .8rem;
         }
         /* Posisi contact FINISH */
     }
