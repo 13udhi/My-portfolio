@@ -473,7 +473,7 @@ body {
             grid-template-columns: repeat(2, .3fr);
             justify-content: center;
             padding: 0;
-            gap: 1rem;
+            gap: .5rem;
         }
         /* Posisi section grid buy FINISH */
 
