@@ -1,0 +1,577 @@
+/* Inisialisai CSS atau membuat penamaan variable pada CSS */
+:root {
+    --warnaUtama: rgb(0, 195, 255);
+    --warnaBackground: rgb(10, 10, 10);
+}
+
+/* CSS Reset START */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+/* CSS Reset FINISH */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--warnaBackground);
+}
+
+/* Navbar START */
+.navbar {
+    background-color: var(--warnaBackground);
+    display: flex;
+    /* mengatur konten secara horizontal */
+    justify-content: space-between;
+    /* mengatur konten secara vertical */
+    align-items: center;
+    padding: 1rem 7%;
+    /* Padding: vertical horizontal */
+    border-bottom: 1px solid rgba(90, 90, 90, 0.8);
+    /* border: ukuran jenis warna */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar .navbar-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+}
+.navbar span {
+    color: var(--warnaUtama);
+    font-style: italic;
+}
+
+.navbar .navbar-nav a {
+    color: white;
+    /* tag a tidak dapat diberikan margin karena display defaultnya adalah inline */
+    /* gunakan display inline-block agar dapat diberi margin */
+    display: inline-block; /* agar item pada navbar dapat diset ukurannya (padding, margin dll) */
+    font-size: 1rem;
+    margin: 0 1.4rem;
+    transition: .5s;
+}
+
+.navbar .navbar-nav a:hover {
+    color: var(--warnaUtama);
+}
+
+/* Membuat garis bawah pada item navbar START */
+.navbar .navbar-nav a::after {
+    content: '';
+    display: block; 
+    padding-bottom: 0rem;
+    border-bottom: 0.1rem solid var(--warnaUtama);
+    transform: scaleX(0);
+    transition: .3s linear;
+}
+.navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.5);
+}
+/* Membuat garis bawah pada item navbar END */
+
+.navbar .navbar-extra a {
+    color: white;
+    margin: 0 0.5rem;
+    /* margin: vertical horizontal */
+    transition: .3s;
+}
+.navbar .navbar-extra a:hover {
+    color: var(--warnaUtama);
+}
+#menu {
+    display: none;
+}
+/* Navbar END */
+
+
+/* Section hero START */
+    .hero {
+        min-height: 100vh;
+        /* Digunakan untuk memberikan ukuran pada section hero sebesar tampilan layar berdasarkan device yang digunakan */
+        display: flex;
+        align-items: center;
+        color: white;
+        background-image: url('img/forest.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        position: relative;
+    }
+    .hero::after { /* digunakan untuk membuat efek pada bagian bawah background */
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 20%;
+        bottom: 0;
+        /* bottom ini digunakan untuk menarik bayangan background hitam ke bagian bawah content*/
+        background: linear-gradient(0deg, rgb(10, 10, 10) 3%, rgba(255, 255, 255, 0) 50%);
+    }
+    
+    .hero .content {
+        padding: 1.4rem 7%;
+        max-width: 60rem;
+    }
+    .hero .content h1 {
+        font-size: 3em;
+        line-height: 3rem;
+    }
+    .hero .content h1 span {
+        color: var(--warnaUtama);
+    }
+    .hero .content p {
+        mix-blend-mode: difference;
+        /* Mengubah warna pada tulisan yang nyaru dengan background dengan warna kebalikannya */
+        margin-top: 1rem;
+    }
+    
+    /* Membuat tombol cold to action pada section hero START */
+    .hero .content .ctm {
+        display: inline-block;
+        background-color: var(--warnaUtama);
+        padding: .5rem 1.2rem;
+        border-radius: 3px;
+        color: white;
+        font-weight: bold;
+        transition: .5s;
+        margin-top: 1rem;
+    }
+    .hero .content .ctm:hover {
+        box-sizing: border-box;
+        background-color: var(--warnaBackground);
+        color: var(--warnaUtama);
+    }
+    /* Membuat tombol cold to action pada section hero END */
+
+    .hero .content2 {
+        margin: auto;
+    }
+    .hero .content2 .item {
+        width: 20rem;
+        height: 20rem;
+        background-image: url(img/1.jpg);
+        background-size: cover;
+        border-radius: 50%;
+        border: 3px solid var(--warnaUtama);
+        box-shadow: 0 0 12px var(--warnaUtama);
+    }
+/* Section hero END */
+
+/* Section about START */
+    .tentang h2 {
+        color: white;
+        text-align: center;
+        padding: 6rem 10% 3rem;
+    }
+    .tentang span {
+        color: var(--warnaUtama);
+        font-style: italic;
+    }
+
+    .tentang .row {
+        display: flex;
+        /* set display: flex pada class row pada about */
+    }
+    .tentang .row .about-img {
+        flex: 3 50rem;
+        position: relative;
+        /* membuat ukuran flex pada class about-img */
+    }
+    .tentang .row .about-img::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        position: absolute;
+        /* background: linear-gradient(to left, rgb(10, 10, 10) 3%, rgba(255,255,255,0) 50%); */
+        background: radial-gradient(rgba(255,255,255,0) 10%, rgb(10, 10, 10) 70%);
+    } 
+    .tentang .row .about-img img {
+        width: 100%;
+        /* set gambar pada class about-img agar memenuhi ukuran dari flexbox yang telah dibuat di dalam class about-img itu sendiri */
+    }
+
+    .tentang .row .about-content p {
+        color: white;
+        max-width: 30rem;
+        margin: 10rem auto 0;
+    }
+    .tentang .row .about-content {
+        flex: 1 1 50rem;
+        padding: 0 1rem;
+        /* set ukuran flexbox pada class about-content */
+    }
+/* Section about END */
+
+/* Section buy START */
+    .buy {
+        /* display: grid;
+        grid-template-areas: 
+        'h2 h2 h2 h2'
+        'p p p p'
+        'came came came came';
+        grid-template-columns: repeat(auto-fit, 1fr);
+        grid-template-rows: repeat(2, 100px) repeat(3, 1fr);
+        place-items: center;
+        border: 3px solid white; */
+        display: grid;
+        justify-content: center;
+    }
+
+    .buy .row {
+        display: grid;
+        width: 70vw;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .buy h2 {
+        color: white;
+        padding: 6rem 0 0;
+        /* padding di atas mempunya tiga value yang mana valuenya adalah padding ATAS, padding KIRI & KANAN, padding BAWAH*/
+        text-align: center;
+    }
+    .buy h2 span {
+        color: var(--warnaUtama);
+        font-style: italic;
+    }
+
+    .buy p {
+        margin: 2rem auto;
+        color: white;
+        max-width: 30rem;
+        /* max-width di atas digunakan untuk mengatur ukuran yang merupakan pembatasan range dari elemen P pada html */
+        text-align: center;
+    }
+
+    .buy .row .card-menu {
+        display: grid;
+        place-items: center;
+        width: 15rem;
+        height: 18rem;
+        border: 0.1px solid var(--warnaUtama);
+        border-radius: 8px;
+        transition: .3s;
+    }
+    .buy .row:hover .card-menu {
+        filter: blur(5px);
+    }
+    .buy .row .card-menu:hover {
+        box-shadow: 0 0 8px var(--warnaUtama);
+        filter: blur(0px);
+    }
+    .buy .row .card-menu img {
+        border-radius: 50%;
+        width: 80%;
+        /* width di atas digunakan untuk mengatur ukuran gambar agar menjadi 80% dari parrentnya */
+    }
+    .buy .row .card-menu h3 {
+        color: white;
+        font-size: .9rem;
+        text-align: center;
+        margin-top: .5rem;
+    }
+    .buy.muncul2::after{
+        content: '';
+        position: fixed;
+        height: 100vh;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: rgba(1, 1, 1, .6);   
+    }
+
+/* Section buy END */
+
+/* Section contact START */
+    .contact {
+        display: grid;
+        justify-items: center;
+        color: white;
+    }
+    .contact h2 {
+        text-align: center;
+        padding: 6rem 10% 3rem;
+    }
+    .contact h2 span {
+        color: var(--warnaUtama);
+    }
+    .contact p {
+        text-align: center;
+        max-width: 30rem;
+        margin-bottom: 3.5rem;
+    }
+    .contact .content {
+        width: 30vw;
+        border: 2px solid var(--warnaUtama);
+        border-radius: 10px;
+        transition: .6s;
+    }
+    .contact .content:hover {
+        transform: scale(1.01);
+        box-shadow: 0 0 10px var(--warnaUtama);
+    }
+    .contact .content .wa, .email, .github {
+        display: flex;
+        margin: 1.5rem 2rem;
+    }
+    .contact .content .wa a, .email a, .github a {
+        margin-left: 1rem;
+        color: white;
+        transition: .2s;
+    }
+    .contact .content .wa a:hover, .email a:hover, .github a:hover {
+        color: var(--warnaUtama);
+    }
+    .contact .content .icon {
+        color: var(--warnaUtama);
+    }
+/* Section contact END */
+
+/* Section footer START */
+    .footer {
+        background-color: var(--warnaUtama);
+        padding: 2rem 7%;
+        margin-top: 3rem;
+        color: white;
+    }
+    .footer .socials {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+    .footer .socials a, .footer .socials p {
+        color: white;
+        display: flex;
+        align-items: center;
+        margin-left: .5rem;
+        transition: .5s;
+    }
+    .footer .socials a:hover, .footer .socials p:hover {
+        color: var(--warnaBackground);
+    }
+    .footer .credit {
+        text-align: center;
+    }
+/* Section footer FINISH */
+
+/* ================================================================================================================================ */
+/* Media Queries START */
+/* Ukuran Laptop */
+    @media (max-width: 1366px) {
+        html {
+            font-size: 90%;
+        }
+    }
+
+/* Ukuran Tablet */
+    @media (max-width: 768px) {
+        html {
+            font-size: 70%;
+        }
+        #menu{
+            display: inline-block;
+        }
+        /* Menyembunyikan menu navbar START */
+        .navbar .navbar-nav {
+            position: absolute;
+            top: 100%;
+            right: -100%;
+            background-color: white;
+            width: 25rem;
+            height: 100vh;
+            transition: .5s;
+        }
+        /* Menyembunyikan menu navbar END */
+        
+        .navbar .navbar-nav.active {
+            right: 0;
+            transition: .5s;
+        }
+
+        /* Posisi menu navbar menjadi vertical START */
+        .navbar .navbar-nav a{
+            color: var(--warnaBackground);
+            margin: 1rem;
+            display: block;
+        }
+        .navbar .navbar-nav a::after {
+            transform-origin: left;
+        }
+        .navbar .navbar-nav a:hover::after {
+            transform: scaleX(.2);
+        }
+        /* Posisi menu navbar menjadi vertical FINISH */
+
+        /* Posisi item hero menjadi vertical START */
+        .hero {
+            min-height: 30vh;
+            display: grid;
+            grid-template-areas: 
+            'foto'
+            'tulisan';
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+        }
+        .hero .content {
+            display: grid;
+            grid-area: tulisan;
+            text-align: center;
+            margin: 0 auto 7rem auto;
+            padding: 0 7%;
+        }
+        .hero .content2 {
+            display: grid;
+            grid-area: foto;
+            align-self: end;
+            transform: scale(1);
+            margin-top: 13rem;
+        }
+        .hero::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 10%;
+            bottom: 0;
+            background: linear-gradient(0deg, rgb(10, 10, 10) 3%, rgba(255, 255, 255, 0) 50%);
+        }
+        /* Posisi item hero menjadi vertical FINISH */
+
+        /* Posisi item about menjadi vertical START */
+        .tentang .row {
+            text-align: center;
+        }
+
+        .tentang .row .about-content p {
+            max-width: 30rem;
+            margin: 1rem auto 0;
+        }
+        /* Posisi item about menjadi vertical FINISH */
+
+        /* Posisi section grid buy START */
+        .buy {
+            grid-template-rows: repeat(3, .3fr);
+            row-gap: 20px;
+        }
+        .buy .row {
+            grid-template-columns: repeat(2, .3fr);
+            justify-content: center;
+            padding: 0;
+            gap: 1rem;
+        }
+        /* Posisi section grid buy FINISH */
+
+        /* Posisi section contact START */
+        .contact .content {
+            width: 50vw;
+            border: 2px solid var(--warnaUtama);
+            border-radius: 10px;
+            transition: .6s;
+        }
+        /* Posisi section contact FINISH */
+    }  
+
+/* Ukuran Handphone */
+    @media (max-width: 450px) {
+        html {
+            font-size: 80%; 
+        }
+        #menu{
+            display: inline-block;
+        }
+        /* Menyembunyikan menu navbar START */
+        .navbar .navbar-nav {
+            position: absolute;
+            top: 100%;
+            right: -300%;
+            background-color: rgba(255,255,255,.5);
+            width: 100%;
+            height: 100vh;
+            transition: .5s;
+        }
+        /* Menyembunyikan menu navbar END */
+        
+        .navbar .navbar-nav.active {
+            right: 0;
+            transition: .5s;
+        }
+
+        /* Posisi menu navbar menjadi vertical START */
+        .navbar .navbar-nav a{
+            color: var(--warnaBackground);
+            margin: 1rem;
+            display: block;
+            text-align: center;
+            font-size: 2em;
+        }
+        .navbar .navbar-nav a::after {
+            transform-origin: center;
+        }
+        .navbar .navbar-nav a:hover::after {
+            transform: scaleX(.1);
+        }
+        /* Posisi menu navbar menjadi vertical FINISH */
+
+        /* Posisi hero START */
+        .hero {
+            min-height: 10vh;
+        }
+        .hero .content {
+            margin-bottom: 13rem;
+        }
+        .hero .content h1 {
+            font-size: 2rem;
+        }
+        .hero .content2 {
+            display: grid;
+            transform: scale(.8);
+            margin-top: 10rem;
+        }
+        /* Posisi hero FINISH */
+
+        /* Posisi item about menjadi vertical START */
+        .tentang .row {
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .tentang .row .about-img {
+            object-fit: cover;
+        }
+        /* Posisi item about menjadi vertical FINISH */
+
+        /* Posisi section grid buy START */
+        .buy {
+            justify-items: center;
+        }
+        .buy .row {
+            grid-template-columns: repeat(2, .1fr);
+            gap: 1rem;
+        }
+        /* Posisi section grid buy FINISH */
+
+        /* Posisi contact START */
+        .contact .content {
+            width: 70vw;
+        }
+        /* Posisi contact FINISH */
+    }
+/* Media Queries END */
+/* ================================================================================================================================ */
