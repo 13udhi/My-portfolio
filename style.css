@@ -421,7 +421,6 @@ body {
 
         /* Posisi item hero menjadi vertical START */
         .hero {
-            min-height: 30vh;
             display: grid;
             grid-template-areas: 
             'foto'
@@ -530,9 +529,6 @@ body {
         /* Posisi menu navbar menjadi vertical FINISH */
 
         /* Posisi hero START */
-        .hero {
-            min-height: 10vh;
-        }
         .hero .content {
             margin-bottom: 13rem;
         }
