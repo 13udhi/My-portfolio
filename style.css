@@ -559,7 +559,7 @@ body {
         }
         .buy .row {
             grid-template-columns: repeat(2, .1fr);
-            gap: 1rem;
+            gap: .4rem;
         }
         /* Posisi section grid buy FINISH */
 
