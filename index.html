@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selamat datang!</title>
+    <link rel="icon" href="img-brand/logo-title.png">
         <!-- Embed feathers icon START -->
             <script src="https://unpkg.com/feather-icons"></script>
         <!-- Embed feathers icon FINISH -->
@@ -19,12 +20,13 @@
 <body>
 <!-- Navbar START -->
     <nav class="navbar">
-        <a href="#" class="navbar-logo"><span>Budhi</span>Suryanto.</a>
+        <a href="#" class="navbar-logo"><img src="img-brand/logo-utama.png"></a>
 
         <div class="navbar-nav">
             <a href="#home"><span>H</span>OME</a>
             <a href="#about"><span>A</span>BOUT</a>
-            <a href="#buy"><span>R</span>ESUME</a>
+            <a href="#buy"><span>S</span>KILLS</a>
+            <a href="#gallery"><span>G</span>ALLERY</a>
             <a href="#contact"><span>C</span>ONTACT</a>
         </div>
 
@@ -38,7 +40,12 @@
     <section id="home" class="hero">
         <main class="content">
             <h1>Halo, saya <span>Budhi</span> Suryanto</h1>
-            <p>Web developer pemula.</p>
+            <p>Beginner Web Dev <span>|</span> Graphic Designer</p>
+            <div class="row">
+                <a href="https://www.instagram.com/13udhi/" target="_blank"><i data-feather="instagram"></i></a>
+                <a href="https://www.facebook.com/budhi.suryanto.37/" target="_blank"><i data-feather="facebook"></i></a>
+                <a href="https://twitter.com/13udhi_" target="_blank"><i data-feather="twitter"></i></a>
+            </div>
             <a href="#contact" class="ctm">Hubungi saya</a>
         </main>
         <main class="content2">
@@ -53,56 +60,88 @@
 
        <div class="row">
         <div class="about-img">
-            <img src="img/forest2.jpg" alt="about">
+            <img src="img/2.jpg" alt="about">
         </div>
         <div class="about-content">
-            <p>Saya adalah seorang web developer pemula.</p>
+            <p>Saya <span>Budhi</span> Suryanto, usia saya saat ini 25 tahun. Pendidikan terakhir saya ialah S1 fakultas teknik prodi teknik informatika di Universitas Pamulang. Saya adalah seorang web developer pemula dan juga seorang desain grafis. Sebelumnya saya bekerja sebagai guru komputer pada salah satu lembaga pendidikan jenjang SD & SMP di Cikeas Bogor. Selain diposisikan sebagai guru komputer, sayapun juga ditunjuk sebagai IT Support sekaligus tim kreatif di lembaga tersebut.</p>
+            <p>Beberapa project yang pernah saya buat di lembaga tersebut diantaranya website landing page dan form pendaftaran yang keduanya dibuat menggunakan HTML, CSS, PHP & framework Bootstrap serta telah terintegrasi dengan database MySQL. Diantara project lainnya adalah pembuatan flyer, banner, spanduk & video editing. Aplikasi pengolah gambar & video yang saya gunakan adalah figma & sony vegas.</p>
         </div>
        </div>
     </section>
 <!-- Section about FINISH -->
 
-<!-- Section resume START -->
+<!-- Section skills START -->
     <section id="buy" class="buy">
-        <h2><span>R</span>esume</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat voluptates animi corrupti possimus. Dolorum, velit?</p>
-
+        <h2><span>S</span>kills</h2>
+        <p>Saya telah mempelajari tentang web programming dengan beberapa bahasa pemrograman, yang terintegrasi dengan database MySQL.</p>
         <div class="row">
             <div class="card-menu">
-                <img src="produk/produk1.jpg" alt="jaket">
-                <h3 class="card-menu-title">Produk 1</h3>
+                <div class="gambar">
+                    <img src="img/1.png" alt="html-logo">
+                </div>
+                <h3>HTML 5</h3>
             </div>
             <div class="card-menu">
-                <img src="produk/produk1.jpg" alt="jaket">
-                <h3 class="card-menu-title">Produk 2</h3>
+                <div class="gambar">
+                    <img src="img/2.png" alt="css-logo">
+                </div>
+                <h3>CSS 3</h3>
             </div>
             <div class="card-menu">
-                <img src="produk/produk1.jpg" alt="jaket">
-                <h3 class="card-menu-title">Produk 3</h3>
+                <div class="gambar">
+                    <img src="img/3.png" alt="js-logo">
+                </div>
+                <h3>Javascript</h3>
             </div>
             <div class="card-menu">
-                <img src="produk/produk1.jpg" alt="jaket">
-                <h3 class="card-menu-title">Produk 4</h3>
+                <div class="gambar">
+                    <img src="img/4.png" alt="mysql-logo">
+                </div>
+                <h3>Database MySQL</h3>
             </div>
         </div>
     </section>
     <!-- Modal box START -->
-        <!-- <div class="modal">
+        <div class="modal">
             <div class="modal-container">
                 <a href="#"><i data-feather="x"></i></a>
                 <div class="modal-content">
-                    <img src="produk/produk1.jpg" alt="jaket">
-                    
+                    <img src="img-brand/logo-utama.png" alt="jaket">
+                    <p>Pembuatan kerangka website menggunakan HTML</p>
                 </div>
             </div>
-        </div> -->
+        </div>
     <!-- Modal box FINISH -->
-<!-- Section resume FINISH -->
+<!-- Section skills FINISH -->
+
+<!-- Section gallery START -->
+    <section id="gallery" class="gallery">
+        <h2><span>G</span>allery</h2>
+        <div class="row">
+            <div class="card-menu">
+                <img src="produk/produk1.jpg" alt="jaket">
+                <h3 class="card-menu-title">HTML</h3>
+            </div>
+            <div class="card-menu">
+                <img src="produk/produk1.jpg" alt="jaket">
+                <h3 class="card-menu-title">CSS</h3>
+            </div>
+            <div class="card-menu">
+                <img src="produk/produk1.jpg" alt="jaket">
+                <h3 class="card-menu-title">Javascript</h3>
+            </div>
+            <div class="card-menu">
+                <img src="produk/produk1.jpg" alt="jaket">
+                <h3 class="card-menu-title">MySQL</h3>
+            </div>
+        </div>
+    </section>
+<!-- Section gallery FINISH -->
     
 <!-- Section contact START -->
     <section id="contact" class="contact">
         <h2><span>C</span>ontact</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat voluptates animi corrupti possimus. Dolorum, velit?</p>
+        <p>Hubungi saya.</p>
         <div class="content">
             <div class="email">
                 <i data-feather="mail" class="icon"></i>

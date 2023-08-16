@@ -32,9 +32,9 @@ body {
     justify-content: space-between;
     /* mengatur konten secara vertical */
     align-items: center;
-    padding: 1rem 7%;
+    padding: .3rem 7%;
     /* Padding: vertical horizontal */
-    border-bottom: 1px solid rgba(90, 90, 90, 0.8);
+    border-bottom: 1px solid var(--warnaUtama);
     /* border: ukuran jenis warna */
     position: fixed;
     top: 0;
@@ -42,7 +42,15 @@ body {
     right: 0;
     z-index: 9999;
 }
-
+.navbar .navbar-logo img {
+    margin-top: .5rem;
+    width: 3rem;
+    height: 3rem;
+    transition: .3s;
+}
+.navbar .navbar-logo img:hover {
+    transform: rotate(-15deg) scale(1.1);
+}
 .navbar .navbar-logo {
     font-size: 1.8rem;
     font-weight: 700;
@@ -128,13 +136,26 @@ body {
         font-size: 3em;
         line-height: 3rem;
     }
-    .hero .content h1 span {
+    .hero .content h1 span, p span {
         color: var(--warnaUtama);
     }
     .hero .content p {
         mix-blend-mode: difference;
         /* Mengubah warna pada tulisan yang nyaru dengan background dengan warna kebalikannya */
         margin-top: 1rem;
+    }
+    .hero .content .row {
+        padding: 0;
+        margin: 1rem auto;
+    }
+    .hero .content .row a {
+        color: white;
+        mix-blend-mode: difference;
+        transition: .3s;
+        margin-right: .5rem;
+    }
+    .hero .content .row a:hover {
+        color: var(--warnaUtama);
     }
     
     /* Membuat tombol cold to action pada section hero START */
@@ -170,6 +191,9 @@ body {
 /* Section hero END */
 
 /* Section about START */
+    .tentang {
+        margin: 0 7%;
+    }
     .tentang h2 {
         color: white;
         text-align: center;
@@ -187,6 +211,8 @@ body {
     .tentang .row .about-img {
         flex: 3 50rem;
         position: relative;
+        filter: grayscale(50%);
+        align-self: center;
         /* membuat ukuran flex pada class about-img */
     }
     .tentang .row .about-img::after {
@@ -197,7 +223,7 @@ body {
         top: 0;
         position: absolute;
         /* background: linear-gradient(to left, rgb(10, 10, 10) 3%, rgba(255,255,255,0) 50%); */
-        background: radial-gradient(rgba(255,255,255,0) 10%, rgb(10, 10, 10) 70%);
+        background: radial-gradient(rgba(255,255,255,0) 10%, rgb(10, 10, 10) 100%);
     } 
     .tentang .row .about-img img {
         width: 100%;
@@ -207,7 +233,7 @@ body {
     .tentang .row .about-content p {
         color: white;
         max-width: 30rem;
-        margin: 10rem auto 0;
+        margin: 1rem auto;
     }
     .tentang .row .about-content {
         flex: 1 1 50rem;
@@ -264,40 +290,84 @@ body {
         place-items: center;
         width: 15rem;
         height: 18rem;
-        border: 0.1px solid var(--warnaUtama);
+        border: 3px solid var(--warnaUtama);
         border-radius: 8px;
         transition: .3s;
+        overflow: hidden;
+        position: relative;
     }
     .buy .row:hover .card-menu {
         filter: blur(5px);
     }
     .buy .row .card-menu:hover {
-        box-shadow: 0 0 8px var(--warnaUtama);
+        box-shadow: 0 0 20px var(--warnaUtama);
         filter: blur(0px);
     }
-    .buy .row .card-menu img {
-        border-radius: 50%;
-        width: 80%;
+    .buy .row .card-menu .gambar img {
+        width: 100%;
         /* width di atas digunakan untuk mengatur ukuran gambar agar menjadi 80% dari parrentnya */
     }
     .buy .row .card-menu h3 {
-        color: white;
-        font-size: .9rem;
-        text-align: center;
-        margin-top: .5rem;
+        position: absolute;
+        color: black;
+        bottom: 1rem;
+        transition: .3s;
     }
-    .buy.muncul2::after{
-        content: '';
-        position: fixed;
-        height: 100vh;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        background-color: rgba(1, 1, 1, .6);   
+    .buy .row .card-menu:hover h3 {
+        color: var(--warnaUtama);
     }
 
+    /* .buy.muncul2::after{
+        content: '';
+           
+    } */
+
+    /* Modal box START */
+        .modal {
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0; /* menempel ke atas */
+            right: 0; /* menempel ke kanan */
+            background-color: rgba(1, 1, 1, .6);
+        }
+        .modal-container {
+            position: relative;
+            background-color: white;
+            padding: 1.5rem;
+            margin: 10% auto;
+            width: 80%;
+        }
+        .modal-container a {
+            position: absolute;
+            right: 1.6rem;
+        }
+        .modal .modal-container .modal-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem; /* property css grid yg dapat digunakan pada flexbox */ 
+        }
+        .modal .modal-container .modal-content img {
+            width: 20rem;
+        }
+        .modal .modal-container .modal-content p {
+            
+        }
+    /* Modal box END */
 /* Section buy END */
+
+/* Section gallery START */
+    .gallery h2 {
+        color: white;
+        text-align: center;
+        padding: 6rem 10% 3rem;
+    }
+    .gallery h2 span {
+        color: var(--warnaUtama);
+        font-style: italic;
+    }
+/* Section gallery FINISH */
 
 /* Section contact START */
     .contact {
@@ -330,6 +400,7 @@ body {
     .contact .content .wa, .email, .github {
         display: flex;
         margin: 1.5rem 2rem;
+        justify-content: center;
     }
     .contact .content .wa a, .email a, .github a {
         margin-left: 1rem;
@@ -456,6 +527,8 @@ body {
         /* Posisi item about menjadi vertical START */
         .tentang .row {
             text-align: center;
+            display: flex;
+            flex-wrap: wrap;
         }
 
         .tentang .row .about-content p {
@@ -547,7 +620,6 @@ body {
             flex-wrap: wrap;
             text-align: center;
         }
-
         .tentang .row .about-img {
             object-fit: cover;
         }
