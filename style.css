@@ -244,33 +244,29 @@ body {
 
 /* Section buy START */
     .buy {
-        /* display: grid;
+        display: grid;
         grid-template-areas: 
         'h2 h2 h2 h2'
         'p p p p'
         'came came came came';
-        grid-template-columns: repeat(auto-fit, 1fr);
-        grid-template-rows: repeat(2, 100px) repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, auto-fit) repeat(3, 1fr);
         place-items: center;
-        border: 3px solid white; */
-        display: grid;
-        justify-content: center;
     }
-
     .buy .row {
         display: grid;
-        width: 70vw;
+        grid-area: came;
         grid-template-columns: repeat(4, 1fr);
-        justify-items: center;
+        place-content: center;
         gap: 1rem;
-        margin-top: 2rem;
     }
-
+    .buy .judul-skills {
+        grid-area: h2;
+    }
     .buy h2 {
         color: white;
         padding: 6rem 0 0;
         /* padding di atas mempunya tiga value yang mana valuenya adalah padding ATAS, padding KIRI & KANAN, padding BAWAH*/
-        text-align: center;
     }
     .buy h2 span {
         color: var(--warnaUtama);
@@ -278,7 +274,9 @@ body {
     }
 
     .buy p {
-        margin: 2rem auto;
+        display: grid;
+        grid-area: p;
+        margin: 3rem auto 2rem;
         color: white;
         max-width: 30rem;
         /* max-width di atas digunakan untuk mengatur ukuran yang merupakan pembatasan range dari elemen P pada html */
@@ -312,6 +310,8 @@ body {
         color: black;
         bottom: 1rem;
         transition: .3s;
+        text-align: center;
+        font-size: 1rem;
     }
     .buy .row .card-menu:hover h3 {
         color: var(--warnaUtama);
@@ -355,14 +355,43 @@ body {
 /* Section buy END */
 
 /* Section gallery START */
+    .gallery {
+        display: grid;
+        grid-template-areas: 
+        'h2 h2 h2 h2'
+        'cont cont cont cont';
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: repeat(1, auto-fit) repeat(2, 1fr);
+        place-items: center;
+    }
+    .gallery .judul-gallery {
+        grid-area: h2;
+    }
     .gallery h2 {
         color: white;
-        text-align: center;
-        padding: 6rem 10% 3rem;
+        padding: 6rem 0 3rem;
     }
     .gallery h2 span {
         color: var(--warnaUtama);
         font-style: italic;
+    }
+    .gallery .row {
+        display: grid;
+        grid-area: cont;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+        gap: 1rem;
+    }
+    .gallery .row .card-menu {
+        display: grid;
+        place-items: center;
+        min-width: 20vw;
+        height: 18rem;
+        border: 3px solid var(--warnaUtama);
+        border-radius: 8px;
+        transition: .3s;
+        overflow: hidden;
+        position: relative;
     }
 /* Section gallery FINISH */
 
@@ -382,7 +411,7 @@ body {
     .contact p {
         text-align: center;
         max-width: 30rem;
-        margin-bottom: 3.5rem;
+        margin-bottom: 2rem;
     }
     .contact .content {
         width: 30vw;
@@ -536,16 +565,30 @@ body {
 
         /* Posisi section grid buy START */
         .buy {
-            grid-template-rows: repeat(3, .3fr);
-            row-gap: 20px;
+            grid-template-rows: repeat(3, auto-fit);
         }
         .buy .row {
-            grid-template-columns: repeat(2, .3fr);
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             padding: 0;
             gap: .5rem;
         }
         /* Posisi section grid buy FINISH */
+
+        /* Posisi section grid gallery START */
+        .gallery {
+            grid-template-rows: repeat(3, auto-fit);
+        }
+        .gallery .row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            padding: 0;
+            gap: .5rem;
+        }
+        .gallery .row .card-menu {
+            min-width: 35vw;
+        }
+        /* Posisi section grid gallery FINISH */
 
         /* Posisi section contact START */
         .contact .content {
@@ -556,6 +599,13 @@ body {
         }
         /* Posisi section contact FINISH */
     }  
+
+/* Ukuran 580px */
+    @media (max-width: 580px) {
+        .contact .content {
+            width: 70vw;
+        }
+    }
 
 /* Ukuran Handphone */
     @media (max-width: 450px) {
@@ -623,19 +673,27 @@ body {
         /* Posisi item about menjadi vertical FINISH */
 
         /* Posisi section grid buy START */
-        .buy {
-            justify-items: center;
-        }
         .buy .row {
+            display: grid;
             grid-template-columns: repeat(2, .1fr);
             gap: .4rem;
         }
         /* Posisi section grid buy FINISH */
 
+        /* Posisi section grid gallery START */
+        .gallery .row {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: .4rem;
+        }
+        .gallery .row .card-menu {
+            min-width: 70vw;
+        }
+        /* Posisi section grid gallery FINISH */
+
         /* Posisi contact START */
         .contact .content {
             width: 70vw;
-            font-size: .8rem;
         }
         /* Posisi contact FINISH */
     }
