@@ -182,11 +182,12 @@ body {
     .hero .content2 .item {
         width: 20rem;
         height: 20rem;
-        background-image: url(img/1.jpg);
+        background-image: url(img/foto.png);
         background-size: cover;
         border-radius: 50%;
         border: 3px solid var(--warnaUtama);
         box-shadow: 0 0 12px var(--warnaUtama);
+        background-color: var(--warnaUtama);
     }
 /* Section hero END */
 
