@@ -2,11 +2,11 @@
 // preventDefault() digunakan untuk menghilangkan fungsi default.
 
 // Custom Title pada html
-let titles = false;
-setInterval(() => {
-    document.title = titles ? 'from Bito' : 'Selamat datang!';
-    titles = !titles;
-}, 5000);
+// let titles = false;
+// setInterval(() => {
+//     document.title = titles ? 'from Bito' : 'Selamat datang!';
+//     titles = !titles;
+// }, 5000);
 
 const navbarNav = document.querySelector('.navbar-nav');
 const menuGarisTiga = document.querySelector('#menu');
